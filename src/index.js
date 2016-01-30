@@ -24,7 +24,7 @@ export default function(url, prev) {
   }
 
   return {
-    contents: json5.parse(readFileSync(files[0]))
+    contents: parseJSON(json5.parse(readFileSync(files[0])))
   };
 }
 
