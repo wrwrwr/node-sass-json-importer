@@ -12,7 +12,8 @@
     "sass",
     "node-sass",
     "importer",
-    "json"
+    "json",
+    "json5"
   ],
   "scripts": {
     "test": "mocha --compilers js:babel/register",
@@ -22,7 +23,8 @@
   "dependencies": {
     "is-there": "^4.0.0",
     "lodash": "^3.10.1",
-    "node-sass": "^3.0.0"
+    "node-sass": "^3.0.0",
+    "json5": "^0.4.0"
   },
   "devDependencies": {
     "babel": "^5.8.23",
