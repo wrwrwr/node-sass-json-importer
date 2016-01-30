@@ -1,10 +1,12 @@
 import _          from 'lodash';
+import {readFileSync} from 'fs';
 import {resolve}  from 'path';
 import isThere    from 'is-there';
+import json5      from 'json5';
 import sass       from 'node-sass';
 
 export default function(url, prev) {
-  if (!/\.json$/.test(url)) {
+  if (!/\.json5?$/.test(url)) {
     return sass.NULL;
   }
 
@@ -22,7 +24,7 @@ export default function(url, prev) {
   }
 
   return {
-    contents: parseJSON(require(files[0]))
+    contents: json5.parse(readFileSync(files[0]))
   };
 }
 
