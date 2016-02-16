@@ -46,5 +46,21 @@ export default {
 };
 ```
 
+## A self-reminder
+
+Do not install more than one copy of `node-sass`.
+
+This may result in a Sass importer (such as this one) holding a reference to
+`SassNull` singleton that is different from the one used by the `node-sass`
+that processes the importer's result. In turn the importer won't be able to
+pass importing any file (any importers after the one on the list won't get a
+chance to process anything).
+
+For an example, try using a local copy of `node-sass-json-importer`
+and `sass-resources-loader` together.
+
+See: https://github.com/sass/node-sass/issues/1291 and
+https://github.com/sass/node-sass/issues/1320.
+
 ## Thanks to
 This module is based on the [sass-json-vars](https://github.com/vigetlabs/sass-json-vars) gem, which unfortunately isn't compatible with `node-sass`.
